@@ -1,18 +1,13 @@
 // app.js
 App({
-  onLaunch: function() {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        traceUser: true,
-      })
-    }
-
-    this.globalData = {
+  onLaunch() {
+    
+    this.globalData= {
+      userInfo: null,
       url: '你的服务器链接',
       pic_url: '你的图片链接',
       login: false
     }
-  }
+  },
+  
 })
