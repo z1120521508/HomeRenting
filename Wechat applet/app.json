@@ -16,15 +16,16 @@
     "pages/request/request",
     "pages/homeDetail/homeDetail",
     "pages/post_house/post_house",
+    "pages/post_maihouse/post_maihouse",
     "pages/history/history"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#179e15",
     "backgroundTextStyle": "light",
 	
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#179e15",
     "navigationBarTitleText": "北洋房屋",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   
   "tabBar": {
