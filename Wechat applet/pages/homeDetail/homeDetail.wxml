@@ -1,0 +1,47 @@
+<!--pages/homeDetail/homeDetail.wxml-->
+<swiper indicator-dots="true">
+	<swiper-item wx:for="{{housepicture}}" wx:key="item" wx:idx="idx">
+		<image mode="aspectFill" class="img-top" src="{{item}}" data-idx="{{idx}}" bindtap="OnImgClick"></image>
+	</swiper-item>
+</swiper>
+
+<view class="info-container">
+	<view class="rentView">
+		<text class="rent">{{houserent}}</text><text class="rentunit"> 元/月</text>
+	</view>
+	<view class="adsView">
+		{{houseaddress}}
+	</view>
+
+	<view class="container-line"></view>
+
+	<view class="tagView">
+		<view wx:for="{{housetype}}" class="brView">
+			<text class="tagText">{{item}}</text>
+		</view>
+	</view>
+
+	<view class='amountBg'>
+			<view class='account'>
+			<view class='name'>
+				{{username}}
+			</view>
+
+		</view>
+	
+	</view>
+
+</view>
+
+
+<view class="transparent"></view>
+
+<view class="longer-line"></view>
+<view class="tabbar">	
+	<view class="btnView">
+		<view class="buttonType" bindtap="OnPhoneClick">
+			<image class="btnicon" src="../../images/topic-detail/phone.png"></image>
+			电话
+		</view>
+  </view>
+</view>

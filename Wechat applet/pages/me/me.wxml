@@ -1,0 +1,45 @@
+<!--pages/me/me.wxml-->
+<view class='amountBg' bindtap="clickUser">
+	<block wx:if="{{login}}">
+		
+		<view class='account'>
+			<view class='nick-name'>
+				{{usernickname}}
+			</view>
+			<view class='address'>
+				{{userphone}} 
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+
+		<view class='account'>
+			<view class='nick-name'>
+				点此登录
+			</view>
+		</view>
+	</block>
+</view>
+
+<!-- 底部列表 -->
+<view class='content'>
+	
+	<view class='hr'></view>
+	<view class='hr'></view>
+	<view class='hr'></view>
+	
+	<view class='item' bindtap="onRentClick">
+		<image class='icon' src='../../images/me/rent.png' style="width:22px;height:21px;"></image>
+		<text class='itemName'>租赁记录</text>
+		<view class='right'>></view>
+	</view>
+
+	<view class='hr'></view>
+	
+	<view class='item' bindtap='outClick'>
+		<image class='icon' src='../../images/me/out.png' style="width:22px;height:21px;"></image>
+		<text class='itemName'>退出登录</text>
+		<view class='right'>></view>
+	</view>
+	<view class='hr'></view>
+</view>

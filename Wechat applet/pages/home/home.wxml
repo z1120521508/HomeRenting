@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<view>
+		<view class="weui-search-bar">
+			<view class="weui-search-bar__form">
+				<!-- 搜索框 -->
+				<view class="weui-search-bar__box">
+					<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+					<input type="text" class="weui-search-bar__input" placeholder="请输入房屋名称或房型关键词" bindinput="OnSearchInput" />
+				</view>
+			</view>
+			<!-- 搜索按钮,调用搜索查询方法 -->
+			<view class="weui-search-bar__cancel-btn" bindtap='searchClick'>搜索</view>
+		</view>
+	</view>
+
+  <button class="add-button" type="primary" bindtap="OnPostHouseClick" >+</button>
+
+<block wx:for='{{houses}}' wx:key="item">
+	<block wx:if="{{item.status=='待租' || showRent==1 }}">
+
+		<view class="container" data-id="{{item.id}}" bindtap="onItemClick">
+			<view class='container-img'>
+				<image mode="aspectFill" class="img-prev" src='你的图片链接' lazy-load="true"></image>
+			</view>
+
+			<view class='container-content'>
+				<view class='house-title'>
+					<view class='house-ads'>
+						<view class='user-name'>{{item.ads}}</view>
+					</view>
+				</view>
+
+				<view class='content'>
+
+					<view class="tagView">
+						<text wx:if="{{item.rentstate==0}}" class="tagText-n">待租</text>
+						<text wx:else class="tagText-r">已租</text>
+						<view wx:for="{{item.housetype}}" wx:key="tag" wx:for-item="tag">
+							<text class="tagText">{{tag}}</text>
+						</view>
+					</view>
+
+					<view class='font-rent'>{{item.houserent}} <text class="font-rent-unit">元/月</text></view>
+				</view>
+			</view>
+		</view>
+		<view class='container-line'></view>
+	</block>
+</block>
