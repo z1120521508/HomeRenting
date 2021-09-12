@@ -344,7 +344,7 @@ export default{
             type: 'warning',
             center: true
           }).then(() => {
-            this.$axios.put(`/api/message/list/${scope.textid}`).then(resp => {
+            this.$axios.delete(`/api/message/resource/${scope.textid}`).then(resp => {
                 if(resp && resp.status === 200) {
                   this.init()
                 }
