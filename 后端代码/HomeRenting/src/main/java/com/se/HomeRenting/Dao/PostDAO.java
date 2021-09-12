@@ -9,4 +9,7 @@ public interface PostDAO extends JpaRepository<Post,Integer> {
 
     List<Post> findAll();
 
+    List<Post> findByTextid(int tid);
+
+    void deleteByTextid(int tid);
 }
