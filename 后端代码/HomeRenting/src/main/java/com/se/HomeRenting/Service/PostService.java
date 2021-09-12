@@ -18,8 +18,17 @@ public class PostService {
         return postDAO.findAll();
     }
 
+    public List<Post> getPost(int tid){
+        return postDAO.findByTextid(tid);
+    }
+
     @Transactional
     public void putPost(Post post){
         postDAO.save(post);
+    }
+
+    @Transactional
+    public void deletePost(int tid){
+        postDAO.deleteByTextid(tid);
     }
 }
