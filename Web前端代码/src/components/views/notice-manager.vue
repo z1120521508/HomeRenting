@@ -189,7 +189,8 @@ export default{
           textid:'',
           usernickname:'',
           userphone:'',
-          text:''
+          text:'',
+          textstatus:''
         },
         dialogFormAdd: false,
         pagination: {
@@ -264,8 +265,8 @@ export default{
             var self = this
             this.$axios({
                 method:'get',
-                url:`/api/house/resources/${this.search}/${this.Housecheck}`,
-                data:{"page":this.pagination.pageIndex,"limit":this.pagination.pageSize,"hid":this.search,'housecheck':this.Housecheck},
+                url:`/api/message/list/${this.search}`,
+                data:{"page":this.pagination.pageIndex,"limit":this.pagination.pageSize,"hid":this.search},
                 headers:{
                     'Content-Type':'application/json;charset=utf-8'      //改这里就好了
             }
@@ -337,13 +338,13 @@ export default{
         },
         // 删除管理员
         deleteAdmin(scope){
-          this.$confirm('确认是否取消过审', '提示', {
+          this.$confirm('确认是否删除', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning',
             center: true
           }).then(() => {
-            this.$axios.put(`/api/house/resources/${scope.houseid}`).then(resp => {
+            this.$axios.put(`/api/message/list/${scope.textid}`).then(resp => {
                 if(resp && resp.status === 200) {
                   this.init()
                 }
