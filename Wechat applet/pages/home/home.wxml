@@ -1,0 +1,52 @@
+<!--pages/home/home.wxml-->
+<swiper>
+ <swiper-item  wx:key="item" wx:for="{{imgUrls}}">
+  <image src='{{item}}' width="335" height="150" mode='widthFix' class='img' />
+ </swiper-item>
+</swiper>
+
+<button class="add-button" type="primary" bindtap="OnPostHouseClick">+</button>
+
+<block wx:for='{{houses}}' wx:key="item">
+	<block wx:if="{{item.rentstate=='0' || showRent==1 }}">
+		<view class="container">
+			<view class="container-img">
+				<image mode="aspectFill" class="img-prev" src="{{item.housepicture}}" lazy-load="true"></image>
+			</view>
+
+			<view class='container-content'>
+				<view class='house-title'>
+					<view class='house-ads'>
+						<view class='user-name'>{{item.houseaddress}}</view>
+					</view>
+				</view>
+
+				<view class='content'>
+
+					<view class="tagView">
+						<text wx:if="{{item.rentstate==0}}" class="tagText-n">待租</text>
+						<text wx:else if="{{item.sellstate==0}}" class="tagText-r">待售</text>
+						<view>
+							<text class="tagText">{{item.housetype}}</text>
+						</view>
+						<view wx:if="{{item.houseelevator==true}}">
+							<text class="tagText">有电梯</text>
+						</view>
+						<view wx:if="{{item.housejoinrent==true}}">
+							<text class="tagText">合租</text>
+						</view>
+					</view>
+					<view class='content-maxg'>{{item.housearea}} <text class="content-maxg">平米</text></view>
+					<view class='font-rent'>{{item.houserent}} <text class="font-rent-unit">元/月</text></view>
+					<view class="tagText-x">
+						<text class="tagText-x">房主姓名</text>{{item.username}}
+					</view>
+					<view class="tagText-x">
+						<text class="tagText-x">房主电话</text>{{item.userphone}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class='container-line'></view>
+	</block>
+</block>
