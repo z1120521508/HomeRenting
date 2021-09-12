@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "name",
+      "type": "com.se.HomeRenting.HelloController",
+      "sourceType": "com.se.HomeRenting.HelloController"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
