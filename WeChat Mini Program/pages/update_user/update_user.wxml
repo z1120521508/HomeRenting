@@ -1,0 +1,21 @@
+<!--pages/update_user/update_user.wxml-->
+<view class="container">
+
+<view class="login-from">
+  <view class='hr'></view>
+  <!--姓名-->
+  <view class="inputView">
+    <image class="nameImage" src=""></image>
+    <input value="{{name}}" class="left_input" placeholder="昵称" bindinput="nameInput" />
+  </view>
+  <view class='hr'></view>
+  <textarea class="textarea" placeholder="住址" maxlength="100" bindinput="OnAdsInput" auto-height="true"></textarea>
+
+
+  <!--按钮-->
+  <view class="loginBtnView">
+    <button disabled="{{!abled}}" class="loginBtn" type="primary" bindtap="updateClick">修改</button>
+  </view>
+
+</view>
+</view>

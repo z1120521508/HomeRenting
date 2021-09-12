@@ -1,0 +1,20 @@
+<!--pages/post/post.wxml-->
+
+<button class="add-button" type="primary" bindtap="onPublishClick" >+</button>
+
+<view wx:for="{{posts}}" class='container' data-id="{{item.id}}" wx:key="item" >
+	<view class='container-content'>
+		<view class='user-info'>
+			<view class='user-name-time'>
+				<view class='user-name'>{{item.usernickname}}</view>
+			</view>
+		</view>
+		<view class='content'>
+			<block>
+				<text class='content-text'>{{item.text}}</text>
+			</block>
+		</view>
+	</view>
+
+	<view class='container-line'></view>
+</view>
